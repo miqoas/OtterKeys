@@ -40,7 +40,7 @@ Otter will print the private and public key.
 
 The private key should be stored securely and should be unique for each of your products. The public key is distributed with your software.
 
-## Recoverying a public key
+## Recovering a public key
 
 > A lost public key can be recovered from a private key by running the command:
 
