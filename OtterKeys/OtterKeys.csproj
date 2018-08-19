@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<LangVersion>7.3</LangVersion>
+		<OutputType>Exe</OutputType>
+		<PackAsTool>true</PackAsTool>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<TargetFramework>netcoreapp2.1</TargetFramework>
+		<Authors>Miqo DA</Authors>
+		<Copyright>Copyright 2018 Miqo DA</Copyright>
+		<PackageId>OtterKeys</PackageId>
+		<Description>🐀🔐 A .NET Global Tool to quickly create Ed25519 key pairs for signing and verifying messages or other data</Description>
+		<PackageLicenseUrl>https://github.com/miqo-no/OtterKeys/LICENSE</PackageLicenseUrl>
+		<PackageProjectUrl>https://github.com/miqo-no/OtterKeys/</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/miqo-no/OtterKeys/</RepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.2.5" />
+		<PackageReference Include="NSec.Cryptography" Version="18.6.0" />
+	</ItemGroup>
+
+</Project>

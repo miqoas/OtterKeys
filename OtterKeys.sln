@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtterKey", "OtterKey\OtterKey.csproj", "{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtterKeys", "OtterKeys\OtterKeys.csproj", "{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}.Debug|x64.Build.0 = Debug|Any CPU
+		{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}.Release|x64.ActiveCfg = Release|Any CPU
+		{2F2F653A-0CBC-4EE1-BF62-462FBBEE2E99}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
