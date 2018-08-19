@@ -15,7 +15,7 @@ dotnet tool install -g otterkeys
 
 ## Usage
 
-```bash
+```text
 Usage: OtterKeys [options] [command]
 
 Options:
