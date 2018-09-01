@@ -1,17 +1,34 @@
 using System;
 using System.Text;
+using System.Threading;
 using McMaster.Extensions.CommandLineUtils;
 using NSec.Cryptography;
 
 namespace OtterKeys.Commands {
 	[Command(Description = "Generate a new Ed25519 key pair.")]
 	public class NewCommand {
+		[Option(CommandOptionType.SingleValue, ShortName = "f", LongName = "format",
+			Description = "Output format of the key pair. Possible values: hex, byte. Default is 'hex' string.")]
+		[AllowedValues("byte", "hex", IgnoreCase = true)]
+		public string Format { get; } = "hex";
+
 		private void OnExecute(CommandLineApplication app) {
 			var algorithm = SignatureAlgorithm.Ed25519;
-
+			
 			using (var key = Key.Create(algorithm, new KeyCreationParameters { ExportPolicy = KeyExportPolicies.AllowPlaintextExport })) {
-				Console.WriteLine($"{Encoding.UTF8.GetString(key.Export(KeyBlobFormat.PkixPrivateKeyText))}");
-				Console.WriteLine($"{Encoding.UTF8.GetString(key.Export(KeyBlobFormat.PkixPublicKeyText))}");
+				switch (Format)
+				{
+					case "hex":
+						new Formatters.HexStringFormatWriter(key);
+						break;
+
+					case "byte":
+						new Formatters.ByteArrayFormatWriter(key);
+						break;
+
+					default:
+						throw new ArgumentException(nameof(Format));
+				}
 			}
 		}
 	}
