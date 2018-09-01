@@ -50,7 +50,7 @@ otterkeys recover [privatekey]
 
 ## Specify key pair output format
 
-You can specify a key pair output format by adding the option `-f byte`. Example:
+You can specify a key pair output format by adding the option `-f`. Possible formats are `hex` and `byte`. Example:
 
 ```bash
 otterkeys new -f byte
