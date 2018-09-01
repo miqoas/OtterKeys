@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 using McMaster.Extensions.CommandLineUtils;
 using NSec.Cryptography;
 

@@ -1,6 +1,4 @@
 using System;
-using System.Text;
-using System.Threading;
 using McMaster.Extensions.CommandLineUtils;
 using NSec.Cryptography;
 
