@@ -40,20 +40,12 @@ Otter will print the private and public key.
 
 The private key should be stored securely and should be unique for each of your products. The public key is distributed with your software.
 
-## Recovering a public key
-
-> A lost public key can be recovered from a private key by running the command:
-
-```bash
-otterkeys recover [privatekey]
-```
-
 ## Specify key pair output format
 
-You can specify a key pair output format by adding the option `-f`. Possible formats are `hex` and `byte`. Example:
+You can specify a key pair output format by adding the option `-o`. Possible formats are `base64`, `byte` and `hex`. Example:
 
 ```bash
-otterkeys new -f byte
+otterkeys new -o byte
 
 Private key:
 0xA2, 0xBF, 0xC3, 0x3E, 0xFD, 0x0F, 0x6D, 0x71
@@ -69,6 +61,28 @@ Public key:
 ```
 
 The default output format is a hex-formatted string.
+
+## Recovering a public key
+
+> A lost public key can be recovered from a private key by running the command:
+
+```bash
+otterkeys recover [privatekey]
+```
+
+You can specify an input and output format by adding the options `-i` and `-o`. The `recover` command supports `base64` and `hex` as input formats, and `base64`, `byte` and `hex` as output formats.
+
+Example:
+
+```bash
+otterkeys recover -i base64 -o base64 Oxky5RUtUuHwoZDQQ5TjFgJAFdOyU7fkpVgUqVoju0Y=
+
+Private key:
+Oxky5RUtUuHwoZDQQ5TjFgJAFdOyU7fkpVgUqVoju0Y=
+
+Public key:
+cs94OIA5LL0Yy70NZtzMi+EJDuHnm3oZDkbE4oBT7n0=
+```
 
 ## Acknowledgements
 
