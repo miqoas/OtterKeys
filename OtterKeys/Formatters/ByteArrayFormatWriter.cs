@@ -28,16 +28,17 @@ namespace OtterKeys.Formatters {
 
 		private void WriteByteArrayToConsole(byte[] bytes) {
 			var i = 0;
+
 			for (var c = 0; c < bytes.Length; c++) {
 				Console.Write($"0x{bytes[c]:X2}");
 
 				i++;
 				if (i == 8) {
-					Console.WriteLine();
+					Console.WriteLine(c < bytes.Length - 1 ? "," : "");
 					i = 0;
 				}
 				else {
-					if (c < bytes.Length - 1) Console.Write(", ");
+					Console.Write(c < bytes.Length - 1 ? ", " : "");
 				}
 			}
 
