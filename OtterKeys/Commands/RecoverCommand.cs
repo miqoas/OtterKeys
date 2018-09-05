@@ -10,27 +10,51 @@ namespace OtterKeys.Commands {
 		[Required]
 		private string PrivateKey { get; }
 
-		[Option(CommandOptionType.SingleValue, ShortName = "f", LongName = "format",
-			Description = "Output format of the key pair. Possible values: hex, byte. Default is 'hex' string.")]
-		[AllowedValues("byte", "hex", IgnoreCase = true)]
-		public string Format { get; } = "hex";
+		[Option(CommandOptionType.SingleValue, ShortName = "i", LongName = "in",
+			Description = "Input format of the public key. Possible values: base64 or hex. Default is 'hex' string.")]
+		[AllowedValues("base64", "hex", IgnoreCase = true)]
+		public string InputFormat { get; } = "hex";
+
+		[Option(CommandOptionType.SingleValue, ShortName = "o", LongName = "out",
+			Description = "Output format of the key pair. Possible values: base64, byte or hex. Default is 'hex' string.")]
+		[AllowedValues("base64", "byte", "hex", IgnoreCase = true)]
+		public string OutputFormat { get; } = "hex";
 
 		private void OnExecute(CommandLineApplication app) {
 			var algorithm = SignatureAlgorithm.Ed25519;
-			using (var key = Key.Import(algorithm, Convert.FromBase64String(PrivateKey), KeyBlobFormat.PkixPrivateKey, new KeyCreationParameters {ExportPolicy = KeyExportPolicies.AllowPlaintextExport})) {
-				switch (Format) {
-					case "hex":
-						new Formatters.HexStringFormatWriter(key);
-						break;
 
-					case "byte":
-						new Formatters.ByteArrayFormatWriter(key);
-						break;
+			try {
+				using (var key = Key.Import(algorithm, ConvertInputToByteArray(), KeyBlobFormat.RawPrivateKey,
+					new KeyCreationParameters {ExportPolicy = KeyExportPolicies.AllowPlaintextExport})) {
+					switch (OutputFormat.ToLower()) {
+						case "base64":
+							new Formatters.Base64StringFormatWriter(key);
+							break;
 
-					default:
-						throw new ArgumentException(nameof(Format));
+						case "byte":
+							new Formatters.ByteArrayFormatWriter(key);
+							break;
+
+						case "hex":
+							new Formatters.HexStringFormatWriter(key);
+							break;
+
+						default:
+							throw new ArgumentException($"Unknown output format: {OutputFormat}");
+					}
 				}
 			}
+			catch (Exception ex) {
+				Console.WriteLine();
+				Console.WriteLine("Rats! An exception occured.");
+				Console.WriteLine(ex.Message);
+			}
+		}
+
+		private byte[] ConvertInputToByteArray() {
+			return InputFormat.ToLower() == "hex"
+				? PrivateKey.DecodeHex()
+				: Convert.FromBase64String(PrivateKey);
 		}
 	}
 }

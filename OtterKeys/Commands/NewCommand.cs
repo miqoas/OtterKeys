@@ -5,27 +5,31 @@ using NSec.Cryptography;
 namespace OtterKeys.Commands {
 	[Command(Description = "Generate a new Ed25519 key pair.")]
 	public class NewCommand {
-		[Option(CommandOptionType.SingleValue, ShortName = "f", LongName = "format",
-			Description = "Output format of the key pair. Possible values: hex, byte. Default is 'hex' string.")]
-		[AllowedValues("byte", "hex", IgnoreCase = true)]
+		[Option(CommandOptionType.SingleValue, ShortName = "o", LongName = "out",
+			Description = "Output format of the key pair. Possible values: base64, byte or hex. Default is 'hex' string.")]
+		[AllowedValues("base64", "byte", "hex", IgnoreCase = true)]
 		public string Format { get; } = "hex";
 
 		private void OnExecute(CommandLineApplication app) {
 			var algorithm = SignatureAlgorithm.Ed25519;
 			
 			using (var key = Key.Create(algorithm, new KeyCreationParameters { ExportPolicy = KeyExportPolicies.AllowPlaintextExport })) {
-				switch (Format)
+				switch (Format.ToLower())
 				{
-					case "hex":
-						new Formatters.HexStringFormatWriter(key);
+					case "base64":
+						new Formatters.Base64StringFormatWriter(key);
 						break;
 
 					case "byte":
 						new Formatters.ByteArrayFormatWriter(key);
 						break;
 
+					case "hex":
+						new Formatters.HexStringFormatWriter(key);
+						break;
+
 					default:
-						throw new ArgumentException(nameof(Format));
+						throw new ArgumentException($"Unknown output format: {Format}");
 				}
 			}
 		}
