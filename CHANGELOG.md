@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Updated README.md file.
+
 ## Version 1.2 - 2018-09-05
 
 OtterKeys can now correctly generate Ed25519 key pairs and output these as `hex` or `base64` encoded strings, or as a `byte` array. Use the `-i` and `-o` option to specify which format should be used.
