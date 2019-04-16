@@ -6,9 +6,9 @@ namespace OtterKeys.Commands {
 	[Command(Description = "Generate a new Ed25519 key pair.")]
 	public class NewCommand {
 		[Option(CommandOptionType.SingleValue, ShortName = "o", LongName = "out",
-			Description = "Output format of the key pair. Possible values: base64, byte or hex. Default is 'hex' string.")]
+			Description = "Output format of the key pair. Possible values: base64, byte or hex. Default is 'base64' string.")]
 		[AllowedValues("base64", "byte", "hex", IgnoreCase = true)]
-		public string Format { get; } = "hex";
+		public string Format { get; } = "base64";
 
 		private void OnExecute(CommandLineApplication app) {
 			var algorithm = SignatureAlgorithm.Ed25519;

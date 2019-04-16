@@ -11,14 +11,14 @@ namespace OtterKeys.Commands {
 		private string PrivateKey { get; }
 
 		[Option(CommandOptionType.SingleValue, ShortName = "i", LongName = "in",
-			Description = "Input format of the public key. Possible values: base64 or hex. Default is 'hex' string.")]
+			Description = "Input format of the public key. Possible values: base64 or hex. Default is 'base64' string.")]
 		[AllowedValues("base64", "hex", IgnoreCase = true)]
-		public string InputFormat { get; } = "hex";
+		public string InputFormat { get; } = "base64";
 
 		[Option(CommandOptionType.SingleValue, ShortName = "o", LongName = "out",
-			Description = "Output format of the key pair. Possible values: base64, byte or hex. Default is 'hex' string.")]
+			Description = "Output format of the key pair. Possible values: base64, byte or hex. Default is 'base64' string.")]
 		[AllowedValues("base64", "byte", "hex", IgnoreCase = true)]
-		public string OutputFormat { get; } = "hex";
+		public string OutputFormat { get; } = "base64";
 
 		private void OnExecute(CommandLineApplication app) {
 			var algorithm = SignatureAlgorithm.Ed25519;
