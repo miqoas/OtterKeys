@@ -40,7 +40,7 @@ formats are `base64`, `byte` and `hex`. Example:
 
 ![usage](.github/command-new-byte.png)
 
-The default output format is a hex-formatted string.
+The default output format is a base64 formatted string.
 
 ## Recovering a public key
 
