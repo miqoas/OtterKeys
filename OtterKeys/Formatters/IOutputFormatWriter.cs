@@ -1,6 +1,8 @@
-namespace OtterKeys.Formatters {
-	internal interface IOutputFormatWriter {
-		void OutputPrivateKey();
-		void OutputPublicKey();
-	}
+namespace OtterKeys.Formatters
+{
+    internal interface IOutputFormatWriter
+    {
+        void OutputPrivateKey();
+        void OutputPublicKey();
+    }
 }

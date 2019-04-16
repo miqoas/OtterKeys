@@ -16,7 +16,7 @@ namespace OtterKeys
         /// <returns>A hex encoded string.</returns>
         public static string EncodeHex(this byte[] bytes)
         {
-            char[] c = new char[bytes.Length * 2];
+            var c = new char[bytes.Length * 2];
 
             byte b;
 
@@ -42,7 +42,7 @@ namespace OtterKeys
             if (hex.Length == 0 || hex.Length % 2 != 0)
                 return new byte[0];
 
-            byte[] buffer = new byte[hex.Length / 2];
+            var buffer = new byte[hex.Length / 2];
             char c;
             for (int bx = 0, sx = 0; bx < buffer.Length; ++bx, ++sx)
             {
