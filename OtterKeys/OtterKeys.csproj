@@ -13,7 +13,7 @@
 		<PackageLicenseUrl>https://github.com/miqo-no/OtterKeys/LICENSE</PackageLicenseUrl>
 		<PackageProjectUrl>https://github.com/miqo-no/OtterKeys/</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/miqo-no/OtterKeys/</RepositoryUrl>
-		<Version>1.2.0</Version>
+		<Version>1.3.0</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
