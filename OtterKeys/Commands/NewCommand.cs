@@ -4,7 +4,7 @@ using NSec.Cryptography;
 
 namespace OtterKeys.Commands
 {
-    [Command(Description = "Generate a new Ed25519 key pair.")]
+    [Command(name: "new", Description = "Generate a new Ed25519 key pair.")]
     public class NewCommand
     {
         [Option(CommandOptionType.SingleValue, ShortName = "o", LongName = "out",

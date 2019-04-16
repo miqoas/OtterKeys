@@ -5,7 +5,7 @@ using NSec.Cryptography;
 
 namespace OtterKeys.Commands
 {
-    [Command(Description = "Recover the public key from a Ed25519 private key.")]
+    [Command(name: "recover", Description = "Recover the public key from a Ed25519 private key.")]
     public class RecoverCommand
     {
         [Argument(0, "PrivateKey", "The Ed25519 private key.")]

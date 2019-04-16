@@ -9,8 +9,8 @@ namespace OtterKeys
         FullName = "OtterKeys the key pair creation tool",
         Description = "A command line utility to create new encryption key pairs."
     )]
-    [Subcommand("new", typeof(Commands.NewCommand))]
-    [Subcommand("recover", typeof(Commands.RecoverCommand))]
+    [Subcommand(typeof(Commands.NewCommand))]
+    [Subcommand(typeof(Commands.RecoverCommand))]
     class Program
     {
         static void Main(string[] args)
