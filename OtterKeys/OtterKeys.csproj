@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<TargetFramework>netcoreapp2.1</TargetFramework>
 		<Authors>Miqo DA</Authors>
-		<Copyright>Copyright 2018 Miqo DA</Copyright>
+		<Copyright>Copyright 2019 Miqo DA</Copyright>
 		<PackageId>OtterKeys</PackageId>
 		<Description>🐀🔐 A .NET Global Tool to quickly create Ed25519 key pairs for signing and verifying messages or other data</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
