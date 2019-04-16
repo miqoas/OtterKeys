@@ -11,9 +11,9 @@
 		<PackageId>OtterKeys</PackageId>
 		<Description>🐀🔐 A .NET Global Tool to quickly create Ed25519 key pairs for signing and verifying messages or other data</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/miqo-no/OtterKeys/</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/miqo-no/OtterKeys/</RepositoryUrl>
-		<Version>1.3.0</Version>
+		<PackageProjectUrl>https://github.com/otter/OtterKeys/</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/otter/OtterKeys/</RepositoryUrl>
+		<Version>1.3.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
